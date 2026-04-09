@@ -353,12 +353,12 @@
 </div>
 
 <div class="tabs">
-  <button class="tab-btn" onclick="switchTab('ge')">⚗️ Guild Expedition</button>
-  <button class="tab-btn active" onclick="switchTab('gbg')">🏰 Battlegrounds</button>
+  <button class="tab-btn active" onclick="switchTab('ge')">⚗️ Guild Expedition</button>
+  <button class="tab-btn" onclick="switchTab('gbg')">🏰 Battlegrounds</button>
 </div>
 
 <!-- GE FORM -->
-<div id="tab-ge" class="tab-content">
+<div id="tab-ge" class="tab-content active">
   <div class="form-card">
     <div class="section-title">Log GE Session</div>
 
@@ -415,17 +415,24 @@
     </div>
 
     <button class="submit-btn" onclick="submitGE()">⚔ Record Expedition</button>
-    <div class="status-msg" id="ge-status"></div>
+    <div class="status-msg success" id="ge-status">⚔ Expedition recorded successfully!</div>
   </div>
 
   <div class="log-section">
     <div class="log-header">Recent GE Entries</div>
-    <div id="ge-log-list"><div class="log-empty">No GE entries recorded yet.</div></div>
+    <div id="ge-log-list">
+      <div class="log-entry">
+        <span class="log-entry-type ge">GE</span>
+        <div class="log-entry-main"><strong>PMTHS</strong> — Trial 16 — L1 Incomplete</div>
+        <div class="log-entry-meta">Entered: 2026-04-09 · Completed: 2026-04-09</div>
+        <div class="log-entry-notes">16</div>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- GBG FORM -->
-<div id="tab-gbg" class="tab-content active">
+<div id="tab-gbg" class="tab-content">
   <div class="form-card">
     <div class="section-title">Log Daily GBG Session</div>
 
@@ -452,14 +459,14 @@
       </div>
 
     <!-- Trial Stats Panel -->
-    <div id="trial-stats-panel" style="display: none; background: rgb(13, 10, 7); border: 1px solid rgb(61, 46, 16); border-radius: 4px; padding: 14px 16px; margin-bottom: 18px;">
+    <div id="trial-stats-panel" style="display:none; background:#0d0a07; border:1px solid #3d2e10; border-radius:4px; padding:14px 16px; margin-bottom:18px;">
       <div style="font-family:'Cinzel',serif; font-size:10px; font-weight:700; letter-spacing:0.2em; color:#7a6530; text-transform:uppercase; margin-bottom:10px;">Trial Stats</div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px 16px; font-size:15px;">
-        <div style="color:#a89060;">Army Boost Modifier</div><div id="stat-modifier" style="color:#e8d9b0; text-align:right;">375%</div>
-        <div style="color:#a89060;">Army Boost Multiplier</div><div id="stat-multiplier" style="color:#e8d9b0; text-align:right;">x1.6</div>
-        <div style="color:#a89060;">Critical Hit Chance</div><div id="stat-crit" style="color:#e8d9b0; text-align:right;">3%</div>
-        <div style="color:#a89060;">Negotiation Multiplier</div><div id="stat-neg" style="color:#e8d9b0; text-align:right;">x1.6</div>
-        <div style="color:#c9a84c; font-weight:600;">Rank Points Multiplier</div><div id="stat-rank" style="color:#c9a84c; text-align:right; font-weight:600;">x3.2</div>
+        <div style="color:#a89060;">Army Boost Modifier</div><div id="stat-modifier" style="color:#e8d9b0; text-align:right;"></div>
+        <div style="color:#a89060;">Army Boost Multiplier</div><div id="stat-multiplier" style="color:#e8d9b0; text-align:right;"></div>
+        <div style="color:#a89060;">Critical Hit Chance</div><div id="stat-crit" style="color:#e8d9b0; text-align:right;"></div>
+        <div style="color:#a89060;">Negotiation Multiplier</div><div id="stat-neg" style="color:#e8d9b0; text-align:right;"></div>
+        <div style="color:#c9a84c; font-weight:600;">Rank Points Multiplier</div><div id="stat-rank" style="color:#c9a84c; text-align:right; font-weight:600;"></div>
       </div>
     </div>
 
@@ -480,19 +487,12 @@
     </div>
 
     <button class="submit-btn" onclick="submitGBG()">🏰 Record Session</button>
-    <div class="status-msg success" id="gbg-status">🏰 Session recorded successfully!</div>
+    <div class="status-msg" id="gbg-status"></div>
   </div>
 
   <div class="log-section">
     <div class="log-header">Recent GBG Entries</div>
-    <div id="gbg-log-list">
-      <div class="log-entry">
-        <span class="log-entry-type gbg">GBG</span>
-        <div class="log-entry-main"><strong>PMTHS</strong> — Trial undefined — 13 battles</div>
-        <div class="log-entry-meta">undefined → undefined · Peak attrition: 13</div>
-        <div class="log-entry-notes">13</div>
-      </div>
-    </div>
+    <div id="gbg-log-list"><div class="log-empty">No GBG entries recorded yet.</div></div>
   </div>
 </div>
 
