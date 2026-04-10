@@ -412,7 +412,7 @@
     <div class="field-row">
       <div class="field">
         <label>Contributed Points</label>
-        <input type="number" id="ge-points" min="0" placeholder="e.g. 1747608">
+        <input type="text" id="ge-points" placeholder="e.g. 1,747,608" inputmode="numeric">
       </div>
       <div class="field">
         <label>Guild Rank</label>
@@ -597,7 +597,7 @@
     const trial = document.getElementById('ge-trial').value;
     const levelCompleted = document.getElementById('ge-level').value;
     const dateCompleted = document.getElementById('ge-date-completed').value;
-    const contributedPoints = document.getElementById('ge-points').value;
+    const contributedPoints = document.getElementById('ge-points').value.replace(/,/g, '');
     const guildRank = document.getElementById('ge-rank').value;
     const encCompleted = document.getElementById('ge-enc-completed').value;
     const encAvailable = 64; // Standard GE cap — hardcoded, update here if InnoGames changes it
@@ -683,6 +683,12 @@
       btn.disabled = false;
     }
   }
+
+  // Comma-format the Contributed Points field as user types
+  document.getElementById('ge-points').addEventListener('input', function() {
+    const raw = this.value.replace(/[^0-9]/g, '');
+    this.value = raw ? Number(raw).toLocaleString() : '';
+  });
 
   // Init
   populateTrials();
