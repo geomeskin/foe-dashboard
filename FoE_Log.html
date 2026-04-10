@@ -374,7 +374,7 @@
     <div class="field-row">
       <div class="field">
         <label>Date Entered GE</label>
-        <input type="text" id="ge-date-entered" readonly="readonly" style="color: var(--parchment-dim); cursor: default;" value="2026-04-10 14:43">
+        <input type="text" id="ge-date-entered" readonly="readonly" style="color: var(--parchment-dim); cursor: default;" value="2026-04-10 16:07">
       </div>
       <div class="field">
         <label>Trial #</label>
@@ -609,7 +609,7 @@
     const contributedPoints = document.getElementById('ge-points').value.replace(/,/g, '');
     const guildRank = document.getElementById('ge-rank').value;
     const encCompleted = document.getElementById('ge-enc-completed').value;
-    const encAvailable = 64; // Standard GE cap — hardcoded, update here if InnoGames changes it
+    const encAvailable = 80; // Standard GE cap — hardcoded, update here if InnoGames changes it
     const notes = document.getElementById('ge-notes').value.trim();
 
     if (!city || !dateEntered || !trial || !levelCompleted) {
