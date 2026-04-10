@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"><div style="display: none;"></div>
+<html lang="en"><head><div style="display: none;"></div>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body><div style="display: none;"></div>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FoE — Battle Log</title>
@@ -343,8 +343,8 @@
     opacity: 0.6;
   }
 </style>
-</head>
-<body>
+
+
 
 <div class="header">
   <span class="crown">⚔️</span>
@@ -374,14 +374,14 @@
     <div class="field-row">
       <div class="field">
         <label>Date Entered GE</label>
-        <input type="date" id="ge-date-entered" value="2026-04-09">
+        <input type="text" id="ge-date-entered" readonly="readonly" style="color: var(--parchment-dim); cursor: default;" value="2026-04-10 14:43">
       </div>
       <div class="field">
         <label>Trial #</label>
         <select id="ge-trial">
           <option value="" selected="selected">— Trial —</option>
           <!-- populated by JS -->
-        <option value="1">Trial 1</option><option value="2">Trial 2</option><option value="3">Trial 3</option><option value="4">Trial 4</option><option value="5">Trial 5</option><option value="6">Trial 6</option><option value="7">Trial 7</option><option value="8">Trial 8</option><option value="9">Trial 9</option><option value="10">Trial 10</option><option value="11">Trial 11</option><option value="12">Trial 12</option><option value="13">Trial 13</option><option value="14">Trial 14</option><option value="15">Trial 15</option><option value="16">Trial 16</option><option value="17">Trial 17</option><option value="18">Trial 18</option><option value="19">Trial 19</option><option value="20">Trial 20</option><option value="21">Trial 21</option><option value="22">Trial 22</option><option value="23">Trial 23</option><option value="24">Trial 24</option><option value="25">Trial 25</option><option value="26">Trial 26</option><option value="27">Trial 27</option><option value="28">Trial 28</option><option value="29">Trial 29</option><option value="30">Trial 30</option></select>
+        <option value="1">Trial 1</option><option value="2">Trial 2</option><option value="3">Trial 3</option><option value="4">Trial 4</option><option value="5">Trial 5</option><option value="6">Trial 6</option><option value="7">Trial 7</option><option value="8">Trial 8</option><option value="9">Trial 9</option><option value="10">Trial 10</option><option value="11">Trial 11</option><option value="12">Trial 12</option><option value="13">Trial 13</option><option value="14">Trial 14</option><option value="15">Trial 15</option><option value="16">Trial 16</option><option value="17">Trial 17</option><option value="18">Trial 18</option><option value="19">Trial 19</option><option value="20">Trial 20</option><option value="21">Trial 21</option><option value="22">Trial 22</option><option value="23">Trial 23</option><option value="24">Trial 24</option><option value="25">Trial 25</option><option value="26">Trial 26</option><option value="27">Trial 27</option><option value="28">Trial 28</option><option value="29">Trial 29</option><option value="30">Trial 30</option><option value="1">Trial 1</option><option value="2">Trial 2</option><option value="3">Trial 3</option><option value="4">Trial 4</option><option value="5">Trial 5</option><option value="6">Trial 6</option><option value="7">Trial 7</option><option value="8">Trial 8</option><option value="9">Trial 9</option><option value="10">Trial 10</option><option value="11">Trial 11</option><option value="12">Trial 12</option><option value="13">Trial 13</option><option value="14">Trial 14</option><option value="15">Trial 15</option><option value="16">Trial 16</option><option value="17">Trial 17</option><option value="18">Trial 18</option><option value="19">Trial 19</option><option value="20">Trial 20</option><option value="21">Trial 21</option><option value="22">Trial 22</option><option value="23">Trial 23</option><option value="24">Trial 24</option><option value="25">Trial 25</option><option value="26">Trial 26</option><option value="27">Trial 27</option><option value="28">Trial 28</option><option value="29">Trial 29</option><option value="30">Trial 30</option></select>
       </div>
     </div>
 
@@ -405,7 +405,7 @@
       </div>
       <div class="field">
         <label>Date Completed</label>
-        <input type="date" id="ge-date-completed" value="2026-04-09">
+        <input type="date" id="ge-date-completed" value="2026-04-10">
       </div>
     </div>
 
@@ -460,7 +460,7 @@
         <select id="gbg-trial">
           <option value="" selected="selected">— Trial —</option>
           <!-- populated by JS -->
-        <option value="1">Trial 1</option><option value="2">Trial 2</option><option value="3">Trial 3</option><option value="4">Trial 4</option><option value="5">Trial 5</option><option value="6">Trial 6</option><option value="7">Trial 7</option><option value="8">Trial 8</option><option value="9">Trial 9</option><option value="10">Trial 10</option><option value="11">Trial 11</option><option value="12">Trial 12</option><option value="13">Trial 13</option><option value="14">Trial 14</option><option value="15">Trial 15</option><option value="16">Trial 16</option><option value="17">Trial 17</option><option value="18">Trial 18</option><option value="19">Trial 19</option><option value="20">Trial 20</option><option value="21">Trial 21</option><option value="22">Trial 22</option><option value="23">Trial 23</option><option value="24">Trial 24</option><option value="25">Trial 25</option><option value="26">Trial 26</option><option value="27">Trial 27</option><option value="28">Trial 28</option><option value="29">Trial 29</option><option value="30">Trial 30</option></select>
+        <option value="1">Trial 1</option><option value="2">Trial 2</option><option value="3">Trial 3</option><option value="4">Trial 4</option><option value="5">Trial 5</option><option value="6">Trial 6</option><option value="7">Trial 7</option><option value="8">Trial 8</option><option value="9">Trial 9</option><option value="10">Trial 10</option><option value="11">Trial 11</option><option value="12">Trial 12</option><option value="13">Trial 13</option><option value="14">Trial 14</option><option value="15">Trial 15</option><option value="16">Trial 16</option><option value="17">Trial 17</option><option value="18">Trial 18</option><option value="19">Trial 19</option><option value="20">Trial 20</option><option value="21">Trial 21</option><option value="22">Trial 22</option><option value="23">Trial 23</option><option value="24">Trial 24</option><option value="25">Trial 25</option><option value="26">Trial 26</option><option value="27">Trial 27</option><option value="28">Trial 28</option><option value="29">Trial 29</option><option value="30">Trial 30</option><option value="1">Trial 1</option><option value="2">Trial 2</option><option value="3">Trial 3</option><option value="4">Trial 4</option><option value="5">Trial 5</option><option value="6">Trial 6</option><option value="7">Trial 7</option><option value="8">Trial 8</option><option value="9">Trial 9</option><option value="10">Trial 10</option><option value="11">Trial 11</option><option value="12">Trial 12</option><option value="13">Trial 13</option><option value="14">Trial 14</option><option value="15">Trial 15</option><option value="16">Trial 16</option><option value="17">Trial 17</option><option value="18">Trial 18</option><option value="19">Trial 19</option><option value="20">Trial 20</option><option value="21">Trial 21</option><option value="22">Trial 22</option><option value="23">Trial 23</option><option value="24">Trial 24</option><option value="25">Trial 25</option><option value="26">Trial 26</option><option value="27">Trial 27</option><option value="28">Trial 28</option><option value="29">Trial 29</option><option value="30">Trial 30</option></select>
       </div>
       <div class="field">
         <label>Battles Fought</label>
@@ -475,7 +475,7 @@
       </div>
       <div class="field">
         <label>End Date</label>
-        <input type="date" id="gbg-end-date" value="2026-04-09">
+        <input type="date" id="gbg-end-date" value="2026-04-10">
       </div>
     </div>
 
@@ -514,12 +514,20 @@
     }
   }
 
+  // Get current datetime as YYYY-MM-DD HH:MM (24hr)
+  function getNow() {
+    const now = new Date();
+    const date = now.toLocaleDateString('en-CA'); // YYYY-MM-DD
+    const hours = String(now.getHours()).padStart(2, '0');
+    const mins = String(now.getMinutes()).padStart(2, '0');
+    return `${date} ${hours}:${mins}`;
+  }
+
   // Set today's date as default
   function setDefaultDates() {
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('ge-date-entered').value = today;
-    document.getElementById('ge-date-completed').value = today;
-    document.getElementById('gbg-end-date').value = today;
+    document.getElementById('ge-date-entered').value = getNow();
+    document.getElementById('ge-date-completed').value = new Date().toLocaleDateString('en-CA');
+    document.getElementById('gbg-end-date').value = new Date().toLocaleDateString('en-CA');
   }
 
   // Tab switching
@@ -593,7 +601,8 @@
   async function submitGE() {
     clearStatus('ge-status');
     const city = document.getElementById('ge-city').value;
-    const dateEntered = document.getElementById('ge-date-entered').value;
+    const dateEntered = getNow();
+    document.getElementById('ge-date-entered').value = dateEntered;
     const trial = document.getElementById('ge-trial').value;
     const levelCompleted = document.getElementById('ge-level').value;
     const dateCompleted = document.getElementById('ge-date-completed').value;
@@ -626,6 +635,7 @@
       setStatus('ge-status', 'success', '⚔ Expedition recorded successfully!');
       // Reset form
       document.getElementById('ge-city').value = '';
+      document.getElementById('ge-date-entered').value = getNow();
       document.getElementById('ge-trial').value = '';
       document.getElementById('ge-level').value = '';
       document.getElementById('ge-points').value = '';
