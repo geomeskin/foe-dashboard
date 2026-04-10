@@ -409,76 +409,79 @@
       </div>
     </div>
 
+    <div class="field-row">
+      <div class="field">
+        <label>Contributed Points</label>
+        <input type="number" id="ge-points" min="0" placeholder="e.g. 1747608">
+      </div>
+      <div class="field">
+        <label>Guild Rank</label>
+        <input type="number" id="ge-rank" min="1" placeholder="e.g. 3">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Encounters Completed</label>
+      <input type="number" id="ge-enc-completed" min="0" placeholder="e.g. 80">
+    </div>
+
     <div class="field">
       <label>Notes</label>
       <textarea id="ge-notes" placeholder="Optional notes..."></textarea>
     </div>
 
     <button class="submit-btn" onclick="submitGE()">⚔ Record Expedition</button>
-    <div class="status-msg success" id="ge-status">⚔ Expedition recorded successfully!</div>
+    <div class="status-msg" id="ge-status"></div>
   </div>
 
   <div class="log-section">
     <div class="log-header">Recent GE Entries</div>
-    <div id="ge-log-list">
-      <div class="log-entry">
-        <span class="log-entry-type ge">GE</span>
-        <div class="log-entry-main"><strong>PMTHS</strong> — Trial 16 — L1 Incomplete</div>
-        <div class="log-entry-meta">Entered: 2026-04-09 · Completed: 2026-04-09</div>
-        <div class="log-entry-notes">16</div>
-      </div>
-    </div>
+    <div id="ge-log-list"><div class="log-empty">No GE entries recorded yet.</div></div>
   </div>
 </div>
 
 <!-- GBG FORM -->
 <div id="tab-gbg" class="tab-content">
   <div class="form-card">
-    <div class="section-title">Log Daily GBG Session</div>
+    <div class="section-title">Log GBG Season</div>
+
+    <div class="field">
+      <label>City</label>
+      <select id="gbg-city">
+        <option value="" selected="selected">— Select City —</option>
+        <option value="CTHG">Carthage (CTHG)</option>
+        <option value="PMTHS">Prometheopolis (PMTHS)</option>
+      </select>
+    </div>
 
     <div class="field-row">
       <div class="field">
-        <label>City</label>
-        <select id="gbg-city">
-          <option value="" selected="selected">— City —</option>
-          <option value="CTHG">Carthage (CTHG)</option>
-          <option value="PMTHS">Prometheopolis (PMTHS)</option>
-        </select>
+        <label>Trial #</label>
+        <select id="gbg-trial">
+          <option value="" selected="selected">— Trial —</option>
+          <!-- populated by JS -->
+        <option value="1">Trial 1</option><option value="2">Trial 2</option><option value="3">Trial 3</option><option value="4">Trial 4</option><option value="5">Trial 5</option><option value="6">Trial 6</option><option value="7">Trial 7</option><option value="8">Trial 8</option><option value="9">Trial 9</option><option value="10">Trial 10</option><option value="11">Trial 11</option><option value="12">Trial 12</option><option value="13">Trial 13</option><option value="14">Trial 14</option><option value="15">Trial 15</option><option value="16">Trial 16</option><option value="17">Trial 17</option><option value="18">Trial 18</option><option value="19">Trial 19</option><option value="20">Trial 20</option><option value="21">Trial 21</option><option value="22">Trial 22</option><option value="23">Trial 23</option><option value="24">Trial 24</option><option value="25">Trial 25</option><option value="26">Trial 26</option><option value="27">Trial 27</option><option value="28">Trial 28</option><option value="29">Trial 29</option><option value="30">Trial 30</option></select>
       </div>
       <div class="field">
-        <label>Date</label>
-        <input type="date" id="gbg-date" value="2026-04-09">
+        <label>Battles Fought</label>
+        <input type="number" id="gbg-battles" min="0" placeholder="e.g. 392">
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label>Start Date</label>
+        <input type="date" id="gbg-start-date">
+      </div>
+      <div class="field">
+        <label>End Date</label>
+        <input type="date" id="gbg-end-date" value="2026-04-09">
       </div>
     </div>
 
     <div class="field">
-        <label>Trial Fought Today</label>
-        <select id="gbg-trial" onchange="showTrialStats()">
-          <option value="" selected="selected">— Trial —</option>
-        <option value="1">Trial 1</option><option value="2">Trial 2</option><option value="3">Trial 3</option><option value="4">Trial 4</option><option value="5">Trial 5</option><option value="6">Trial 6</option><option value="7">Trial 7</option><option value="8">Trial 8</option><option value="9">Trial 9</option><option value="10">Trial 10</option><option value="11">Trial 11</option><option value="12">Trial 12</option><option value="13">Trial 13</option><option value="14">Trial 14</option><option value="15">Trial 15</option><option value="16">Trial 16</option><option value="17">Trial 17</option><option value="18">Trial 18</option><option value="19">Trial 19</option><option value="20">Trial 20</option><option value="21">Trial 21</option><option value="22">Trial 22</option><option value="23">Trial 23</option><option value="24">Trial 24</option><option value="25">Trial 25</option><option value="26">Trial 26</option><option value="27">Trial 27</option><option value="28">Trial 28</option><option value="29">Trial 29</option><option value="30">Trial 30</option><option value="31">Trial 31</option><option value="32">Trial 32</option><option value="33">Trial 33</option><option value="34">Trial 34</option><option value="35">Trial 35</option><option value="36">Trial 36</option><option value="37">Trial 37</option><option value="38">Trial 38</option><option value="39">Trial 39</option><option value="40">Trial 40</option><option value="41">Trial 41</option><option value="42">Trial 42</option><option value="43">Trial 43</option><option value="44">Trial 44</option><option value="45">Trial 45</option><option value="46">Trial 46</option><option value="47">Trial 47</option><option value="48">Trial 48</option><option value="49">Trial 49</option><option value="50">Trial 50</option></select>
-      </div>
-
-    <!-- Trial Stats Panel -->
-    <div id="trial-stats-panel" style="display:none; background:#0d0a07; border:1px solid #3d2e10; border-radius:4px; padding:14px 16px; margin-bottom:18px;">
-      <div style="font-family:'Cinzel',serif; font-size:10px; font-weight:700; letter-spacing:0.2em; color:#7a6530; text-transform:uppercase; margin-bottom:10px;">Trial Stats</div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px 16px; font-size:15px;">
-        <div style="color:#a89060;">Army Boost Modifier</div><div id="stat-modifier" style="color:#e8d9b0; text-align:right;"></div>
-        <div style="color:#a89060;">Army Boost Multiplier</div><div id="stat-multiplier" style="color:#e8d9b0; text-align:right;"></div>
-        <div style="color:#a89060;">Critical Hit Chance</div><div id="stat-crit" style="color:#e8d9b0; text-align:right;"></div>
-        <div style="color:#a89060;">Negotiation Multiplier</div><div id="stat-neg" style="color:#e8d9b0; text-align:right;"></div>
-        <div style="color:#c9a84c; font-weight:600;">Rank Points Multiplier</div><div id="stat-rank" style="color:#c9a84c; text-align:right; font-weight:600;"></div>
-      </div>
-    </div>
-
-    <div class="field-row">
-      <div class="field">
-        <label>Battles Fought</label>
-        <input type="number" id="gbg-battles" min="0" placeholder="e.g. 40">
-      </div>
-      <div class="field">
-        <label>Peak Attrition</label>
-        <input type="number" id="gbg-attrition" min="0" placeholder="e.g. 72">
-      </div>
+      <label>Peak Attrition Reached</label>
+      <input type="number" id="gbg-attrition" min="0" placeholder="e.g. 72">
     </div>
 
     <div class="field">
@@ -486,7 +489,7 @@
       <textarea id="gbg-notes" placeholder="Optional notes..."></textarea>
     </div>
 
-    <button class="submit-btn" onclick="submitGBG()">🏰 Record Session</button>
+    <button class="submit-btn" onclick="submitGBG()">🏰 Record Season</button>
     <div class="status-msg" id="gbg-status"></div>
   </div>
 
@@ -501,84 +504,14 @@
   const LOCAL_KEY_GE = 'foe_ge_log';
   const LOCAL_KEY_GBG = 'foe_gbg_log';
 
-  // Full GBG trial stats table (source: FoE official support, Aug 2025)
-  const TRIAL_STATS = {
-    1:  {modifier:0,    multiplier:1.0, crit:'0%',  neg:1.0, rank:2.0},
-    2:  {modifier:25,   multiplier:1.0, crit:'0%',  neg:1.0, rank:2.1},
-    3:  {modifier:50,   multiplier:1.1, crit:'0%',  neg:1.1, rank:2.2},
-    4:  {modifier:75,   multiplier:1.1, crit:'0%',  neg:1.1, rank:2.3},
-    5:  {modifier:100,  multiplier:1.2, crit:'0%',  neg:1.2, rank:2.4},
-    6:  {modifier:125,  multiplier:1.2, crit:'0%',  neg:1.2, rank:2.5},
-    7:  {modifier:150,  multiplier:1.3, crit:'0%',  neg:1.3, rank:2.6},
-    8:  {modifier:175,  multiplier:1.3, crit:'0%',  neg:1.3, rank:2.7},
-    9:  {modifier:200,  multiplier:1.4, crit:'0%',  neg:1.4, rank:2.8},
-    10: {modifier:225,  multiplier:1.5, crit:'0%',  neg:1.5, rank:2.9},
-    11: {modifier:275,  multiplier:1.5, crit:'1%',  neg:1.5, rank:3.0},
-    12: {modifier:325,  multiplier:1.6, crit:'2%',  neg:1.6, rank:3.1},
-    13: {modifier:375,  multiplier:1.6, crit:'3%',  neg:1.6, rank:3.2},
-    14: {modifier:425,  multiplier:1.7, crit:'4%',  neg:1.7, rank:3.3},
-    15: {modifier:475,  multiplier:1.7, crit:'5%',  neg:1.7, rank:3.4},
-    16: {modifier:525,  multiplier:1.8, crit:'6%',  neg:1.8, rank:3.5},
-    17: {modifier:575,  multiplier:1.8, crit:'7%',  neg:1.8, rank:3.6},
-    18: {modifier:625,  multiplier:1.9, crit:'8%',  neg:1.9, rank:3.7},
-    19: {modifier:675,  multiplier:1.9, crit:'9%',  neg:1.9, rank:3.8},
-    20: {modifier:725,  multiplier:2.0, crit:'10%', neg:2.0, rank:3.9},
-    21: {modifier:825,  multiplier:2.0, crit:'11%', neg:2.0, rank:4.0},
-    22: {modifier:925,  multiplier:2.1, crit:'12%', neg:2.1, rank:4.1},
-    23: {modifier:1025, multiplier:2.1, crit:'13%', neg:2.1, rank:4.2},
-    24: {modifier:1125, multiplier:2.2, crit:'14%', neg:2.2, rank:4.3},
-    25: {modifier:1225, multiplier:2.2, crit:'15%', neg:2.2, rank:4.4},
-    26: {modifier:1325, multiplier:2.3, crit:'16%', neg:2.3, rank:4.5},
-    27: {modifier:1425, multiplier:2.3, crit:'17%', neg:2.3, rank:4.6},
-    28: {modifier:1525, multiplier:2.4, crit:'18%', neg:2.4, rank:4.7},
-    29: {modifier:1625, multiplier:2.4, crit:'19%', neg:2.4, rank:4.8},
-    30: {modifier:1725, multiplier:2.5, crit:'20%', neg:2.5, rank:4.9},
-    31: {modifier:1850, multiplier:2.5, crit:'21%', neg:2.5, rank:5.0},
-    32: {modifier:1975, multiplier:2.6, crit:'22%', neg:2.6, rank:5.1},
-    33: {modifier:2100, multiplier:2.6, crit:'23%', neg:2.6, rank:5.2},
-    34: {modifier:2225, multiplier:2.7, crit:'24%', neg:2.7, rank:5.3},
-    35: {modifier:2350, multiplier:2.7, crit:'25%', neg:2.7, rank:5.4},
-    36: {modifier:2475, multiplier:2.8, crit:'26%', neg:2.8, rank:5.5},
-    37: {modifier:2600, multiplier:2.8, crit:'27%', neg:2.8, rank:5.6},
-    38: {modifier:2725, multiplier:2.9, crit:'28%', neg:2.9, rank:5.7},
-    39: {modifier:2850, multiplier:2.9, crit:'29%', neg:2.9, rank:5.8},
-    40: {modifier:2975, multiplier:3.0, crit:'30%', neg:3.0, rank:5.9},
-    41: {modifier:3125, multiplier:3.1, crit:'32%', neg:3.1, rank:6.0},
-    42: {modifier:3275, multiplier:3.2, crit:'34%', neg:3.2, rank:6.1},
-    43: {modifier:3425, multiplier:3.3, crit:'36%', neg:3.3, rank:6.2},
-    44: {modifier:3575, multiplier:3.4, crit:'38%', neg:3.4, rank:6.3},
-    45: {modifier:3725, multiplier:3.5, crit:'40%', neg:3.5, rank:6.4},
-    46: {modifier:3875, multiplier:3.6, crit:'42%', neg:3.6, rank:6.5},
-    47: {modifier:4025, multiplier:3.7, crit:'44%', neg:3.7, rank:6.6},
-    48: {modifier:4175, multiplier:3.8, crit:'46%', neg:3.8, rank:6.7},
-    49: {modifier:4325, multiplier:3.9, crit:'48%', neg:3.9, rank:6.8},
-    50: {modifier:4475, multiplier:4.0, crit:'50%', neg:4.0, rank:7.0},
-  };
-
   // Populate trial dropdowns
   function populateTrials() {
     const geSelect = document.getElementById('ge-trial');
-    const gbgFoughtSelect = document.getElementById('gbg-trial');
+    const gbgSelect = document.getElementById('gbg-trial');
     for (let i = 1; i <= 30; i++) {
       geSelect.innerHTML += `<option value="${i}">Trial ${i}</option>`;
+      gbgSelect.innerHTML += `<option value="${i}">Trial ${i}</option>`;
     }
-    for (let i = 1; i <= 50; i++) {
-      gbgFoughtSelect.innerHTML += `<option value="${i}">Trial ${i}</option>`;
-    }
-  }
-
-  // Show trial stats panel when trial fought is selected
-  function showTrialStats() {
-    const trial = parseInt(document.getElementById('gbg-trial').value);
-    const panel = document.getElementById('trial-stats-panel');
-    if (!trial || !TRIAL_STATS[trial]) { panel.style.display = 'none'; return; }
-    const s = TRIAL_STATS[trial];
-    document.getElementById('stat-modifier').textContent = s.modifier.toLocaleString() + '%';
-    document.getElementById('stat-multiplier').textContent = 'x' + s.multiplier.toFixed(1);
-    document.getElementById('stat-crit').textContent = s.crit;
-    document.getElementById('stat-neg').textContent = 'x' + s.neg.toFixed(1);
-    document.getElementById('stat-rank').textContent = 'x' + s.rank.toFixed(1);
-    panel.style.display = 'block';
   }
 
   // Set today's date as default
@@ -586,7 +519,7 @@
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('ge-date-entered').value = today;
     document.getElementById('ge-date-completed').value = today;
-    document.getElementById('gbg-date').value = today;
+    document.getElementById('gbg-end-date').value = today;
   }
 
   // Tab switching
@@ -633,6 +566,7 @@
         <span class="log-entry-type ge">GE</span>
         <div class="log-entry-main"><strong>${e.city}</strong> — Trial ${e.trial} — ${e.levelCompleted}</div>
         <div class="log-entry-meta">Entered: ${e.dateEntered}${e.dateCompleted ? ' · Completed: ' + e.dateCompleted : ''}</div>
+        <div class="log-entry-meta">${e.contributedPoints ? 'Points: ' + Number(e.contributedPoints).toLocaleString() : ''}${e.guildRank ? ' · Rank: #' + e.guildRank : ''}${e.encCompleted ? ' · Encounters: ' + e.encCompleted + '/' + (e.encAvailable || '?') : ''}</div>
         ${e.notes ? `<div class="log-entry-notes">${e.notes}</div>` : ''}
       </div>
     `).join('');
@@ -663,6 +597,10 @@
     const trial = document.getElementById('ge-trial').value;
     const levelCompleted = document.getElementById('ge-level').value;
     const dateCompleted = document.getElementById('ge-date-completed').value;
+    const contributedPoints = document.getElementById('ge-points').value;
+    const guildRank = document.getElementById('ge-rank').value;
+    const encCompleted = document.getElementById('ge-enc-completed').value;
+    const encAvailable = 64; // Standard GE cap — hardcoded, update here if InnoGames changes it
     const notes = document.getElementById('ge-notes').value.trim();
 
     if (!city || !dateEntered || !trial || !levelCompleted) {
@@ -670,7 +608,7 @@
       return;
     }
 
-    const entry = { formType: 'GE', city, dateEntered, trial, levelCompleted, dateCompleted, notes };
+    const entry = { formType: 'GE', city, dateEntered, trial, levelCompleted, dateCompleted, contributedPoints, guildRank, encCompleted, encAvailable, notes };
 
     const btn = document.querySelector('#tab-ge .submit-btn');
     btn.disabled = true;
@@ -690,6 +628,9 @@
       document.getElementById('ge-city').value = '';
       document.getElementById('ge-trial').value = '';
       document.getElementById('ge-level').value = '';
+      document.getElementById('ge-points').value = '';
+      document.getElementById('ge-rank').value = '';
+      document.getElementById('ge-enc-completed').value = '';
       document.getElementById('ge-notes').value = '';
     } catch (err) {
       setStatus('ge-status', 'error', 'Failed to send. Check your connection.');
@@ -702,18 +643,19 @@
   async function submitGBG() {
     clearStatus('gbg-status');
     const city = document.getElementById('gbg-city').value;
-    const date = document.getElementById('gbg-date').value;
-    const trialFought = document.getElementById('gbg-trial').value;
+    const trial = document.getElementById('gbg-trial').value;
+    const startDate = document.getElementById('gbg-start-date').value;
+    const endDate = document.getElementById('gbg-end-date').value;
     const battlesFought = document.getElementById('gbg-battles').value;
     const peakAttrition = document.getElementById('gbg-attrition').value;
     const notes = document.getElementById('gbg-notes').value.trim();
 
-    if (!city || !date || !trialFought || !battlesFought) {
+    if (!city || !trial || !startDate || !endDate || !battlesFought) {
       setStatus('gbg-status', 'error', 'Please fill in all required fields.');
       return;
     }
 
-    const entry = { formType: 'GBG', city, date, trialFought, battlesFought, peakAttrition, notes };
+    const entry = { formType: 'GBG', city, trial, startDate, endDate, battlesFought, peakAttrition, notes };
 
     const btn = document.querySelector('#tab-gbg .submit-btn');
     btn.disabled = true;
@@ -728,14 +670,13 @@
       });
       saveLocal(LOCAL_KEY_GBG, entry);
       renderGBGLog();
-      setStatus('gbg-status', 'success', '🏰 Session recorded successfully!');
+      setStatus('gbg-status', 'success', '🏰 Season recorded successfully!');
       // Reset form
       document.getElementById('gbg-city').value = '';
       document.getElementById('gbg-trial').value = '';
       document.getElementById('gbg-battles').value = '';
       document.getElementById('gbg-attrition').value = '';
       document.getElementById('gbg-notes').value = '';
-      document.getElementById('trial-stats-panel').style.display = 'none';
     } catch (err) {
       setStatus('gbg-status', 'error', 'Failed to send. Check your connection.');
     } finally {
