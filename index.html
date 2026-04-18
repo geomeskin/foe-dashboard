@@ -18,6 +18,12 @@
     --accent:  #4a9eda;
     --red:     #c0392b;
     --green:   #27ae60;
+    --chg-up:      #2ecc71;
+    --chg-down:    #e74c3c;
+    --chg-new-bg:  rgba(74,158,218,0.18);
+    --chg-new-fg:  #4a9eda;
+    --chg-gone-bg: rgba(192,57,43,0.18);
+    --chg-gone-fg: #e74c3c;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,27 +47,13 @@
     text-align: center;
     position: relative;
   }
-
   header::before {
-    content: "⚜";
-    position: absolute;
-    left: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    color: var(--gold);
-    opacity: 0.6;
+    content: "⚜"; position: absolute; left: 2rem; top: 50%;
+    transform: translateY(-50%); font-size: 2rem; color: var(--gold); opacity: 0.6;
   }
-
   header::after {
-    content: "⚜";
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    color: var(--gold);
-    opacity: 0.6;
+    content: "⚜"; position: absolute; right: 2rem; top: 50%;
+    transform: translateY(-50%); font-size: 2rem; color: var(--gold); opacity: 0.6;
   }
 
   h1 {
@@ -71,20 +63,12 @@
     letter-spacing: 0.08em;
     text-shadow: 0 0 30px rgba(201,168,76,0.4);
   }
-
   .subtitle {
-    font-size: 0.95rem;
-    color: var(--gold-lt);
-    opacity: 0.7;
-    margin-top: 0.3rem;
-    font-style: italic;
+    font-size: 0.95rem; color: var(--gold-lt); opacity: 0.7;
+    margin-top: 0.3rem; font-style: italic;
   }
 
-  main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
 
   .city {
     margin-bottom: 3rem;
@@ -96,9 +80,7 @@
   }
 
   h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.4rem;
-    color: var(--gold);
+    font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--gold);
     background: linear-gradient(90deg, var(--dark3), var(--dark4));
     padding: 1rem 1.5rem;
     border-bottom: 1px solid rgba(201,168,76,0.3);
@@ -106,71 +88,79 @@
   }
 
   h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 0.95rem;
-    color: var(--accent);
-    padding: 1rem 1.5rem 0.5rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    opacity: 0.9;
+    font-family: 'Cinzel', serif; font-size: 0.95rem; color: var(--accent);
+    padding: 1rem 1.5rem 0.5rem; letter-spacing: 0.1em;
+    text-transform: uppercase; opacity: 0.9;
   }
 
-  .table-wrap {
-    overflow-x: auto;
-    padding: 0 1rem 1.2rem;
+  /* Gone block */
+  .gone-block {
+    margin: 0.75rem 1.5rem;
+    padding: 0.6rem 1rem;
+    background: rgba(192,57,43,0.12);
+    border: 1px solid rgba(192,57,43,0.35);
+    border-radius: 5px;
+    font-size: 0.9rem;
   }
+  .gone-label {
+    font-family: 'Cinzel', serif; font-size: 0.8rem;
+    color: var(--chg-gone-fg); letter-spacing: 0.08em;
+    text-transform: uppercase; display: block; margin-bottom: 0.3rem;
+  }
+  .gone-block ul { list-style: none; padding: 0; }
+  .gone-block li { color: var(--text); padding: 0.1rem 0; }
+  .was { color: var(--text); opacity: 0.55; font-style: italic; font-size: 0.85em; }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-  }
+  .table-wrap { overflow-x: auto; padding: 0 1rem 1.2rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
 
   thead tr {
     background: var(--dark3);
     border-bottom: 2px solid rgba(201,168,76,0.3);
   }
-
   th {
-    font-family: 'Cinzel', serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--gold-lt);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.7rem 1rem;
-    text-align: left;
-    white-space: nowrap;
+    font-family: 'Cinzel', serif; font-size: 0.75rem; font-weight: 700;
+    color: var(--gold-lt); letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.7rem 1rem; text-align: left; white-space: nowrap;
   }
-
   th.num, td.num { text-align: right; }
 
   tbody tr {
     border-bottom: 1px solid rgba(255,255,255,0.04);
     transition: background 0.15s;
   }
-
   tbody tr:hover { background: rgba(201,168,76,0.05); }
   tbody tr:nth-child(even) { background: rgba(0,0,0,0.15); }
   tbody tr:nth-child(even):hover { background: rgba(201,168,76,0.05); }
-
   tbody tr.unknown { opacity: 0.6; font-style: italic; }
 
-  td {
-    padding: 0.55rem 1rem;
-    color: var(--text);
-  }
-
+  td { padding: 0.55rem 1rem; color: var(--text); }
   td:first-child { color: var(--text-lt); }
   td.num { color: var(--gold-lt); font-variant-numeric: tabular-nums; }
 
-  footer {
+  /* Change badges */
+  .chg-cell { text-align: right; }
+  .chg {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.1rem 0.45rem;
+    border-radius: 3px;
+    min-width: 3.5rem;
     text-align: center;
-    padding: 1.5rem;
-    color: var(--text);
-    opacity: 0.4;
-    font-size: 0.85rem;
-    font-style: italic;
+  }
+  .chg-none  { color: rgba(212,201,176,0.2); background: transparent; font-weight: 400; }
+  .chg-up    { color: var(--chg-up);   background: rgba(46,204,113,0.15); border: 1px solid rgba(46,204,113,0.3); }
+  .chg-down  { color: var(--chg-down); background: rgba(231,76,60,0.15);  border: 1px solid rgba(231,76,60,0.3); }
+  .chg-new   { color: var(--chg-new-fg);  background: var(--chg-new-bg);  border: 1px solid rgba(74,158,218,0.35); }
+  .chg-gone  { color: var(--chg-gone-fg); background: var(--chg-gone-bg); border: 1px solid rgba(192,57,43,0.35); }
+
+  footer {
+    text-align: center; padding: 1.5rem; color: var(--text);
+    opacity: 0.4; font-size: 0.85rem; font-style: italic;
     border-top: 1px solid rgba(201,168,76,0.1);
   }
 
@@ -189,6 +179,7 @@
 
         <section class="city">
             <h2>Carthage</h2>
+            
 
             <h3>⚔ Guaranteed Daily Production</h3>
             <div class="table-wrap">
@@ -197,6 +188,7 @@
                     <tr>
                         <th>Kit</th>
                         <th>Frags / Day</th>
+                        <th>△ Change</th>
                         <th>Need</th>
                         <th>Days / Kit</th>
                         <th>Kits / Month</th>
@@ -206,6 +198,7 @@
             <tr class="">
                 <td>Self-Aid Kit</td>
                 <td class="num">10.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">15</td>
                 <td class="num">1.5</td>
                 <td class="num">20.00</td>
@@ -213,6 +206,7 @@
             <tr class="">
                 <td>Mass Self‑Aid Kit</td>
                 <td class="num">16.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">30</td>
                 <td class="num">1.9</td>
                 <td class="num">16.00</td>
@@ -220,6 +214,7 @@
             <tr class="">
                 <td>Finish All Supply Productions</td>
                 <td class="num">5.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">15</td>
                 <td class="num">3.0</td>
                 <td class="num">10.00</td>
@@ -227,6 +222,7 @@
             <tr class="">
                 <td>Finish Special Production</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">30</td>
                 <td class="num">10.0</td>
                 <td class="num">3.00</td>
@@ -234,6 +230,7 @@
             <tr class="">
                 <td>Neo Fashion Boutique Selection Kit</td>
                 <td class="num">60.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">1000</td>
                 <td class="num">16.7</td>
                 <td class="num">1.80</td>
@@ -241,6 +238,7 @@
             <tr class="">
                 <td>Astral Viaticum Lighthouse Golden Upgrade Kit</td>
                 <td class="num">5.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">150</td>
                 <td class="num">30.0</td>
                 <td class="num">1.00</td>
@@ -248,6 +246,7 @@
             <tr class="">
                 <td>Fabled Celtic Goldsmith Golden Upgrade Kit</td>
                 <td class="num">5.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">150</td>
                 <td class="num">30.0</td>
                 <td class="num">1.00</td>
@@ -255,6 +254,7 @@
             <tr class="">
                 <td>Pirate's Paradise Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">33.3</td>
                 <td class="num">0.90</td>
@@ -262,6 +262,7 @@
             <tr class="">
                 <td>Zen Harmony Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">33.3</td>
                 <td class="num">0.90</td>
@@ -269,6 +270,7 @@
             <tr class="">
                 <td>Aerial Eden Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">33.3</td>
                 <td class="num">0.90</td>
@@ -276,6 +278,7 @@
             <tr class="">
                 <td>Fires of Skuddeholm Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">33.3</td>
                 <td class="num">0.90</td>
@@ -283,6 +286,7 @@
             <tr class="">
                 <td>Whispering Fields Selection Kit</td>
                 <td class="num">2.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">50.0</td>
                 <td class="num">0.60</td>
@@ -290,6 +294,7 @@
             <tr class="">
                 <td>Winter Wonderland Pyramid Selection Kit</td>
                 <td class="num">1.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">100.0</td>
                 <td class="num">0.30</td>
@@ -297,6 +302,7 @@
             <tr class="">
                 <td>Obsidian Tower Upgrade Kit</td>
                 <td class="num">8.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">1000</td>
                 <td class="num">125.0</td>
                 <td class="num">0.24</td>
@@ -304,6 +310,7 @@
             <tr class="">
                 <td>Mad Scientist's Dominion Upgrade Kit</td>
                 <td class="num">8.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">1000</td>
                 <td class="num">125.0</td>
                 <td class="num">0.24</td>
@@ -318,6 +325,7 @@
                     <tr>
                         <th>Kit</th>
                         <th>Avg Frags / Day</th>
+                        <th>△ Change</th>
                         <th>Need</th>
                         <th>Avg Days / Kit</th>
                     </tr>
@@ -326,96 +334,112 @@
             <tr class="">
                 <td>6h Mass Supply Rush</td>
                 <td class="num">14.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">15</td>
                 <td class="num">1.1</td>
             </tr>
             <tr class="">
                 <td>Finish Special Production</td>
                 <td class="num">17.8</td>
+                <td class="num chg-cell"><span class="chg chg-up">+14.8</span></td>
                 <td class="num">30</td>
                 <td class="num">1.7</td>
             </tr>
             <tr class="">
                 <td>Store Building</td>
                 <td class="num">4.5</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">15</td>
                 <td class="num">3.3</td>
             </tr>
             <tr class="">
                 <td>Finish Goods Production</td>
                 <td class="num">7.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">30</td>
                 <td class="num">4.3</td>
             </tr>
             <tr class="">
                 <td>Treasure Dragon's Roar Selection Kit</td>
                 <td class="num">15.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">6.7</td>
             </tr>
             <tr class="">
                 <td>One Up Kit</td>
                 <td class="num">3.6</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">30</td>
                 <td class="num">8.3</td>
             </tr>
             <tr class="">
                 <td>Finish All Supply Productions</td>
                 <td class="num">1.5</td>
+                <td class="num chg-cell"><span class="chg chg-down">-3.5</span></td>
                 <td class="num">15</td>
                 <td class="num">10.0</td>
             </tr>
             <tr class="">
                 <td>Golden Dragon Gong Upgrade Kit</td>
                 <td class="num">7.5</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">13.3</td>
             </tr>
             <tr class="">
                 <td>Zheng's Golden Bell Upgrade Kit</td>
                 <td class="num">7.5</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">13.3</td>
             </tr>
             <tr class="">
                 <td>Mass Self‑Aid Kit</td>
                 <td class="num">2.0</td>
+                <td class="num chg-cell"><span class="chg chg-down">-14.0</span></td>
                 <td class="num">30</td>
                 <td class="num">15.0</td>
             </tr>
             <tr class="">
                 <td>Starlight Garden Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">33.3</td>
             </tr>
             <tr class="">
                 <td>Daunting Tower - Active</td>
                 <td class="num">2.5</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">40.0</td>
             </tr>
             <tr class="">
                 <td>Radiant Relics Selection Kit</td>
                 <td class="num">2.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">50.0</td>
             </tr>
             <tr class="">
                 <td>Dragon's Breath Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">150</td>
                 <td class="num">50.0</td>
             </tr>
             <tr class="">
                 <td>Lagoon Hideout Selection Kit</td>
                 <td class="num">1.6</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">150</td>
                 <td class="num">93.8</td>
             </tr>
             <tr class="unknown">
                 <td>Yukitomo Tower Selection Kit</td>
                 <td class="num">4.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">?</td>
                 <td class="num">N/A</td>
             </tr></tbody>
@@ -424,6 +448,11 @@
         </section>
         <section class="city">
             <h2>Prometheopolis</h2>
+            
+        <div class="gone-block">
+            <span class="gone-label">⬇ No Longer Producing</span>
+            <ul><li>Celestial Viaticum Lighthouse Silver Upgrade Kit <span class="was">(was 10.0/day)</span></li></ul>
+        </div>
 
             <h3>⚔ Guaranteed Daily Production</h3>
             <div class="table-wrap">
@@ -432,6 +461,7 @@
                     <tr>
                         <th>Kit</th>
                         <th>Frags / Day</th>
+                        <th>△ Change</th>
                         <th>Need</th>
                         <th>Days / Kit</th>
                         <th>Kits / Month</th>
@@ -441,6 +471,7 @@
             <tr class="">
                 <td>Self-Aid Kit</td>
                 <td class="num">25.0</td>
+                <td class="num chg-cell"><span class="chg chg-up">+5.0</span></td>
                 <td class="num">15</td>
                 <td class="num">0.6</td>
                 <td class="num">50.00</td>
@@ -448,6 +479,7 @@
             <tr class="">
                 <td>Finish All Supply Productions</td>
                 <td class="num">11.0</td>
+                <td class="num chg-cell"><span class="chg chg-up">+5.0</span></td>
                 <td class="num">15</td>
                 <td class="num">1.4</td>
                 <td class="num">22.00</td>
@@ -455,6 +487,7 @@
             <tr class="">
                 <td>Mass Self‑Aid Kit</td>
                 <td class="num">15.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">30</td>
                 <td class="num">2.0</td>
                 <td class="num">15.00</td>
@@ -462,6 +495,7 @@
             <tr class="">
                 <td>Finish Special Production</td>
                 <td class="num">9.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">30</td>
                 <td class="num">3.3</td>
                 <td class="num">9.00</td>
@@ -469,6 +503,7 @@
             <tr class="">
                 <td>One Up Kit</td>
                 <td class="num">6.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">30</td>
                 <td class="num">5.0</td>
                 <td class="num">6.00</td>
@@ -476,6 +511,7 @@
             <tr class="">
                 <td>Neo Fashion Boutique Selection Kit</td>
                 <td class="num">120.0</td>
+                <td class="num chg-cell"><span class="chg chg-up">+10.0</span></td>
                 <td class="num">1000</td>
                 <td class="num">8.3</td>
                 <td class="num">3.60</td>
@@ -483,6 +519,7 @@
             <tr class="">
                 <td>5h Mass Supply Rush</td>
                 <td class="num">1.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">15</td>
                 <td class="num">15.0</td>
                 <td class="num">2.00</td>
@@ -490,6 +527,7 @@
             <tr class="">
                 <td>Aerial Eden Selection Kit</td>
                 <td class="num">6.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">16.7</td>
                 <td class="num">1.80</td>
@@ -497,6 +535,7 @@
             <tr class="">
                 <td>Zen Harmony Selection Kit</td>
                 <td class="num">6.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">16.7</td>
                 <td class="num">1.80</td>
@@ -504,6 +543,7 @@
             <tr class="">
                 <td>Mystic Celtic Tavern Golden Upgrade Kit</td>
                 <td class="num">5.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">150</td>
                 <td class="num">30.0</td>
                 <td class="num">1.00</td>
@@ -511,6 +551,7 @@
             <tr class="">
                 <td>Fabled Celtic Goldsmith Golden Upgrade Kit</td>
                 <td class="num">5.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">150</td>
                 <td class="num">30.0</td>
                 <td class="num">1.00</td>
@@ -518,6 +559,7 @@
             <tr class="">
                 <td>Puppy Hauler Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">33.3</td>
                 <td class="num">0.90</td>
@@ -525,6 +567,7 @@
             <tr class="">
                 <td>Sleigh Builder Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">33.3</td>
                 <td class="num">0.90</td>
@@ -532,6 +575,7 @@
             <tr class="">
                 <td>Pirate's Paradise Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">33.3</td>
                 <td class="num">0.90</td>
@@ -539,6 +583,7 @@
             <tr class="">
                 <td>Fires of Skuddeholm Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">33.3</td>
                 <td class="num">0.90</td>
@@ -546,6 +591,7 @@
             <tr class="">
                 <td>Pagan Harvest Selection Kit</td>
                 <td class="num">2.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">50.0</td>
                 <td class="num">0.60</td>
@@ -553,6 +599,7 @@
             <tr class="">
                 <td>Whispering Fields Selection Kit</td>
                 <td class="num">2.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">100</td>
                 <td class="num">50.0</td>
                 <td class="num">0.60</td>
@@ -560,6 +607,7 @@
             <tr class="">
                 <td>Obsidian Tower Upgrade Kit</td>
                 <td class="num">4.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">1000</td>
                 <td class="num">250.0</td>
                 <td class="num">0.12</td>
@@ -567,6 +615,7 @@
             <tr class="">
                 <td>Mad Scientist's Dominion Upgrade Kit</td>
                 <td class="num">4.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">1000</td>
                 <td class="num">250.0</td>
                 <td class="num">0.12</td>
@@ -574,6 +623,7 @@
             <tr class="">
                 <td>Neo Marble Gate Way Selection Kit</td>
                 <td class="num">4.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">1000</td>
                 <td class="num">250.0</td>
                 <td class="num">0.12</td>
@@ -581,6 +631,7 @@
             <tr class="">
                 <td>Radiant Flamingo Paradise Upgrade Kit</td>
                 <td class="num">2.0</td>
+                <td class="num chg-cell"><span class="chg chg-none">—</span></td>
                 <td class="num">1000</td>
                 <td class="num">500.0</td>
                 <td class="num">0.06</td>
@@ -595,6 +646,7 @@
                     <tr>
                         <th>Kit</th>
                         <th>Avg Frags / Day</th>
+                        <th>△ Change</th>
                         <th>Need</th>
                         <th>Avg Days / Kit</th>
                     </tr>
@@ -603,114 +655,133 @@
             <tr class="">
                 <td>6h Mass Supply Rush</td>
                 <td class="num">21.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">15</td>
                 <td class="num">0.7</td>
             </tr>
             <tr class="">
                 <td>Finish Special Production</td>
                 <td class="num">28.6</td>
+                <td class="num chg-cell"><span class="chg chg-up">+19.6</span></td>
                 <td class="num">30</td>
                 <td class="num">1.0</td>
             </tr>
             <tr class="">
                 <td>Store Building</td>
                 <td class="num">10.5</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">15</td>
                 <td class="num">1.4</td>
             </tr>
             <tr class="">
                 <td>Renovation Kit</td>
                 <td class="num">7.5</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">30</td>
                 <td class="num">4.0</td>
             </tr>
             <tr class="">
                 <td>Finish All Supply Productions</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-down">-3.0</span></td>
                 <td class="num">15</td>
                 <td class="num">5.0</td>
             </tr>
             <tr class="">
                 <td>One Up Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-down">-3.0</span></td>
                 <td class="num">30</td>
                 <td class="num">10.0</td>
             </tr>
             <tr class="">
                 <td>Treasure Dragon's Roar Selection Kit</td>
                 <td class="num">9.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">11.1</td>
             </tr>
             <tr class="">
                 <td>Radiant Relics Selection Kit</td>
                 <td class="num">6.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">16.7</td>
             </tr>
             <tr class="">
                 <td>Golden Dragon Gong Upgrade Kit</td>
                 <td class="num">4.5</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">22.2</td>
             </tr>
             <tr class="">
                 <td>Zheng's Golden Bell Upgrade Kit</td>
                 <td class="num">4.5</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">22.2</td>
             </tr>
             <tr class="">
                 <td>Earth's Guardians Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">33.3</td>
             </tr>
             <tr class="">
                 <td>Habitats Journey Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">33.3</td>
             </tr>
             <tr class="">
                 <td>Starlight Garden Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">33.3</td>
             </tr>
             <tr class="">
                 <td>Crimson Dragon's Breath Golden Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">150</td>
                 <td class="num">50.0</td>
             </tr>
             <tr class="">
                 <td>Dragon's Breath Selection Kit</td>
                 <td class="num">3.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">150</td>
                 <td class="num">50.0</td>
             </tr>
             <tr class="">
                 <td>Lagoon Hideout Selection Kit</td>
                 <td class="num">1.6</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">150</td>
                 <td class="num">93.8</td>
             </tr>
             <tr class="">
                 <td>Daunting Tower - Active</td>
                 <td class="num">1.0</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">100</td>
                 <td class="num">100.0</td>
             </tr>
             <tr class="">
                 <td>Alligator Swamp Upgrade Kit</td>
                 <td class="num">1.5</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">150</td>
                 <td class="num">100.0</td>
             </tr>
             <tr class="">
                 <td>Tapir Trails Upgrade Kit</td>
                 <td class="num">1.5</td>
+                <td class="num chg-cell"><span class="chg chg-new">NEW</span></td>
                 <td class="num">150</td>
                 <td class="num">100.0</td>
             </tr></tbody>
